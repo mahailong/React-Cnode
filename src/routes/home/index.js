@@ -30,7 +30,8 @@ class Home extends React.Component {
                     onLeftClick={this.onOpenChange}
                     >CNode社区</NavBar>
                 <Tabs onChange={this.props.TabChange} 
-                    swipeable={ false }
+                    swipeable={false}
+                    pageSize={6}
                     defaultActiveKey={this.props.selectedTab}>
                     <Tabs.TabPane tab="全部" key="all">
                         <List tab="all"/>
