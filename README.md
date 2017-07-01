@@ -1,5 +1,4 @@
 ## dva-antd-draft-cnodeAPI
-![cnode-antd.png](//dn-cnode.qbox.me/FgHpWZGvFNWH4oOHfWe5oDjjHPAy)
 [预览DEMO](https://mahailong.github.io/cnode-antd/dist) 
  
  
