@@ -32,8 +32,6 @@ export default {
         },
         *createReply({ payload }, { call, put }) {  // eslint-disable-line
             const reply = yield call(postReply, payload)
-            const result = yield call(fetchTopicDetail, payload)
-            yield put({ type: 'save', payload: {...result.data.data}});
         },
     },
 

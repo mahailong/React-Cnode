@@ -41,7 +41,7 @@ export default class Item extends React.Component {
                 </div>
             </div>
             {replyIndex?
-                <div className="reply-index">回复：{replyIndex+1}楼</div>  
+                <div className="reply-index">回复：{replyIndex}楼</div>  
             :""}
             <div className="title" dangerouslySetInnerHTML={{__html: data.content}}></div>
         </div>)

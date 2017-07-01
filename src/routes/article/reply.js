@@ -12,7 +12,7 @@ export default class Reply extends React.Component {
         this.state = { 
             editorContents: [],
             modalShow: false,
-            ModalText: ''
+            modalText: ''
         }
     }
     componentWillMount() {
@@ -38,7 +38,7 @@ export default class Reply extends React.Component {
         const { editorContents } = this.state
         const contentValue = editorContents[0]?draftToMarkdown(convertToRaw(editorContents[0].getCurrentContent())):""
         if(contentValue.length < 10){
-            this.onModalShow('话题内容不够')
+            this.onModalShow('回复内容不够')
         }else{
             this.props.onCreateReply({
                 accesstoken: this.props.accesstoken,
@@ -46,11 +46,12 @@ export default class Reply extends React.Component {
                 reply_id: this.props.reply_id,
                 content: contentValue
             })
+            this.props.onPopupHide();
         }
     }
     onModalShow=(text)=> {
         this.setState({
-            ModalText: text,
+            modalText: text,
             modalShow: true
         });
     }
@@ -68,6 +69,15 @@ export default class Reply extends React.Component {
             <Icon className="publish" 
                 type={require('!svg-sprite!../../assets/svg/publish1.svg')}
                 onClick={this.onSubmit}/>
+            <Modal
+                title={this.state.modalText}
+                transparent
+                maskClosable={false}
+                visible={this.state.modalShow}
+                onClose={this.onModalClose}
+                footer={[{ text: '确定', onPress: this.onModalClose}]}
+                >  
+            </Modal>
             <Editor
                 hashtag={{}}
                 editorState={editorContents[0]}

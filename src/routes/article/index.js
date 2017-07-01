@@ -88,7 +88,7 @@ class Article extends React.Component {
                     <div className="head">
                         <div className="title">{data.title}</div>
                         {data.good
-                            ? <img className="isgood" src='../../assets/isgood.png'/>
+                            ? <img className="isgood" src='./img/isgood.png'/>
                             : ''}
                         <div className="content clearfix">
                             <Link to={`/user/${data.author.loginname}`} className="avatar">
@@ -130,7 +130,7 @@ class Article extends React.Component {
                                 if(item.reply_id){
                                     input.forEach((f_item,f_index)=>{
                                         if(f_item.id==item.reply_id){
-                                            replyIndex = f_index
+                                            replyIndex = f_index+1
                                         }
                                     })
                                 }

@@ -27,16 +27,19 @@ class Publish extends React.Component {
     }
 
     componentWillMount() {
-        if(this.props.author && this.props.loginname == this.props.author.loginname && this.props.params.id){
-            const contentBlocks = convertFromHTML(this.props.content);
-            const contentState = ContentState.createFromBlockArray(contentBlocks);
-            const defaultEditorState = EditorState.createWithContent(contentState);
-            this.setState({
-                isOwn: true,
-                tabValue: this.props.tab,
-                titleValue: this.props.title,
-                editorContents: [defaultEditorState]
-            })
+        if(this.props.params.id){
+            const { tab, title, content, author } = this.props.articleArr[this.props.params.id]
+            if(author && this.props.loginname == author.loginname && this.props.params.id){
+                const contentBlocks = convertFromHTML(content);
+                const contentState = ContentState.createFromBlockArray(contentBlocks);
+                const defaultEditorState = EditorState.createWithContent(contentState);
+                this.setState({
+                    isOwn: true,
+                    tabValue: tab,
+                    titleValue: title,
+                    editorContents: [defaultEditorState]
+                })
+            }
         }
     }
 
