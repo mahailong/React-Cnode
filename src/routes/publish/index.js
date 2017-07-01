@@ -6,6 +6,7 @@ import draftToMarkdown from 'draftjs-to-markdown';
 import Editor from '../../components/draft';
 import './style.less';
 
+const scrollHeight = document.body.scrollHeight
 class Publish extends React.Component {
 
     constructor(props) {
@@ -122,7 +123,7 @@ class Publish extends React.Component {
             </List>
             <Editor
                 editorState={editorContents[0]}
-                editorStyle={{height:document.body.scrollHeight-440}}
+                editorStyle={{height:scrollHeight-360}}
                 onEditorStateChange={this.onEditorStateChange.bind(this, 0)}
             />
             <Modal
