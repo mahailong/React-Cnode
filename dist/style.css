@@ -1,0 +1,27 @@
+#root .am-navbar{
+    background-color: #343434;
+}
+.clearfix::after{
+    content:".";
+    clear:both;
+    display:block;
+    height:0;
+    overflow:hidden;
+    visibility:hidden;
+}
+.bg-img{
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+.full-img{
+    width: 100%;
+}
+.float-r{
+    float: right;
+}
+.float-l{
+    float: left;
+}
