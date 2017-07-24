@@ -26,8 +26,8 @@
 
 ## 运行项目
 ```
-  git clone https://github.com/mahailong/cnode-antd.git
-  cd cnode-antd
+  git clone https://github.com/mahailong/React-Cnode.git
+  cd React-Cnode
   npm install
   npm start
 ```
